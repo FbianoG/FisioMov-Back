@@ -5,7 +5,11 @@ const router = require("./src/routes/router.js")
 const port = 3000
 const cors = require('cors')
 
-app.use(cors())
+const corsOptions = {
+	origin: 'https://fbianog.github.io/FisioMov-Front'
+  }
+  
+app.use(cors(corsOptions))
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 app.use(express.static("./src/public"))
