@@ -5,13 +5,13 @@ const router = require("./src/routes/router.js")
 const port = 3000
 const cors = require('cors')
 
-const corsOptions = {
-	origin: 'https://fbianog.github.io'
-}
-
 // const corsOptions = {
-// 	origin: 'http://127.0.0.1:5500'
+// 	origin: 'https://fbianog.github.io'
 // }
+
+const corsOptions = {
+	origin: 'http://127.0.0.1:5500'
+}
 
 app.use(cors(corsOptions))
 app.use(express.json())
