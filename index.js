@@ -6,7 +6,7 @@ const port = 3000
 const cors = require('cors')
 
 const corsOptions = {
-	origin: 'https://fbianog.github.io/FisioMov-Front'
+	origin: 'https://fbianog.github.io'
   }
   
 app.use(cors(corsOptions))
