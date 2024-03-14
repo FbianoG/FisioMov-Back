@@ -1,7 +1,7 @@
 const express = require("express")
 const app = express()
-const DataBase = require("./src/database/db")
-const router = require("./src/routes/router")
+const DataBase = require("./src/database/db.js")
+const router = require("./src/routes/router.js")
 const port = 3000
 const cors = require('cors')
 
