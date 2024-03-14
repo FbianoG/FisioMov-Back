@@ -73,8 +73,8 @@ async function getAllUsers(req, res) { // Busca todos os "Usuários" no "DataBas
 			return res.status(401).json({ auth: false, message: "Acesso não permitido." })
 		}
 		let allPatients = await PacientModel.find({ isPacient: true, }, "-password")
-		if (allPatients.length === 0) {
-			return res.status(204).json({ auth: true, message: "Não há paciente cadastrado no Bando de Dados." })
+		if (!allPatients) {
+			return res.status(204).json({ auth: true, message: "Não há paciente cadastrado no Banco de Dados." });
 		}
 		return res.status(200).json({ status: 200, auth: true, allPatients })
 	} catch (error) {
