@@ -7,8 +7,12 @@ const cors = require('cors')
 
 const corsOptions = {
 	origin: 'https://fbianog.github.io'
-  }
-  
+}
+
+// const corsOptions = {
+// 	origin: 'http://127.0.0.1:5500'
+// }
+
 app.use(cors(corsOptions))
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
