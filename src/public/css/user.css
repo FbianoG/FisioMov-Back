@@ -1,0 +1,304 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+html {
+    width: 100vw;
+    overflow-x: hidden;
+}
+
+body {
+    background: #fdfdfd;
+}
+
+header {
+    background: #fdfdfd;
+    width: 100%;
+    height: 70px;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    box-shadow: 0px 3px 5px #0003;
+    z-index: 10;
+    padding: 0 50px;
+    top: 0;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+    color: #333;
+    font-family: 'Nunito', sans-serif;
+}
+
+nav {
+    display: flex;
+    gap: 40px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+nav a:hover {
+    transition: 250ms;
+    opacity: 0.5;
+}
+
+nav .active {
+    color: #c82c3f;
+    font-weight: bold;
+}
+
+.accessBar {
+    display: flex;
+    gap: 30px;
+    justify-self: flex-end;
+    align-items: center;
+
+}
+
+.accessBar a {
+    padding: 5px 10px;
+    color: #2cb5a0;
+    background: #fdfdfd;
+    box-shadow: none;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.accessBar a:hover {
+    transition: 300ms;
+    color: #fdfdfd;
+    background: #2cb5a0;
+    box-shadow: 3px 3px 5px #0003;
+}
+
+
+.perfilHeader {
+    width: 50px;
+    height: 50px;
+    background: #2cb5a0;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 3px 3px 5px #0003;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.perfilHeader img {
+    width: 90%;
+    height: 90%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* CONTENT */
+.content {
+    padding: 70px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.content h1 {
+    text-transform: capitalize;
+    margin-bottom: 35px;
+    font-weight: 500;
+    color: #333;
+}
+
+.content h2 {
+    text-transform: capitalize;
+    font-weight: 500;
+    color: #333;
+}
+
+.content .title {
+    text-align: center;
+    margin: 30px 0 15px;
+    color: #333;
+}
+
+.containerActivity {
+    width: 90%;
+    max-width: 1300px;
+    max-height: auto;
+    padding: 0 10px;
+    display: grid;
+    grid-template-columns: 90% 10%;
+    grid-template-rows: 45px;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 3px 3px 10px #0003;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 40px;
+    transition: 500ms;
+}
+
+.containerActivity h3 {
+    color: #2cb5a0;
+    grid-column: span 2;
+}
+
+.extendListBtn {
+    color: #666;
+}
+
+.fa-chevron-down {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 250ms;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.listActivity {
+    grid-column: span 2;
+    /* border: 1px solid red; */
+    padding: 5px;
+    list-style: none;
+    transition: 300ms;
+}
+
+.cardActivity {
+    height: 80px;
+    /* border: 1px solid blue; */
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    text-transform: capitalize;
+}
+
+.cardData {
+    width: 50%;
+    display: flex;
+    gap: 10px;
+}
+
+
+.actImg {
+    width: 80px;
+    height: 100%;
+    display: inline-block;
+    object-fit: cover;
+}
+
+.cardData h4 {
+    color: #555;
+    font-weight: 500;
+}
+
+.cardData label {
+    color: #aaa;
+    font-size: 14px;
+}
+
+.statusActivity {
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    column-gap: 30px;
+    padding: 0px 30px;
+}
+
+.statusActivity a {
+    font-size: 25px;
+    color: #2cb5a0;
+}
+
+
+
+
+.access {
+    position: fixed;
+    right: -350px;
+    bottom: 30px;
+    width: 300px;
+    height: 300px;
+    padding: 15px;
+    border-radius: 10px;
+    background: #fdfdfd;
+    box-shadow: 2px 2px 5px #0003;
+    text-align: center;
+}
+
+.access i {
+    display: block;
+    font-size: 45px;
+    text-align: center;
+    color: #2cb5a0;
+    text-shadow: 3px 3px 5px #0003;
+}
+
+.access span {
+    width: 100%;
+    font-size: 20px;
+    color: #333;
+}
+.access label {
+    display: block;
+    font-size: 14px;
+    color: #555;
+    margin: 5px 0 0;
+}
+
+.access a {
+    display: block;
+    margin: 20px 0 0;
+}
+.access a:hover {
+opacity: 0.5;
+transition: 300ms;
+}
+
+.access button {
+    margin: 30px 0 0;
+opacity: 0.5;
+
+cursor: pointer;
+padding: 3px 5px;
+border-radius: 5px;
+border: 1px solid #bbb;
+}
+.access button:hover {
+opacity: 1;
+transition: 300ms;
+}
+
+
+
+/* mb <= 767 - TB <= 1023 - */
+@media screen and (max-width: 767px) {
+
+    .statusActivity p,
+    .statusActivity i {
+        display: none;
+    }
+
+    .statusActivity a i {
+        display: block;
+    }
+}

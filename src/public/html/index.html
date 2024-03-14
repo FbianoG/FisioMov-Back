@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang='pt-br'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <link rel='stylesheet' href='../css/home.css'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src='../js/home.js' defer></script>
+    <title>Fisio Mov</title>
+</head>
+
+<body>
+    <header>
+        <div class="logo">FISIO MOV</div>
+        <nav>
+            <a href="#banner">Início</a>
+            <a href="#recursos">Recursos</a>
+            <a href="#members">Membros</a>
+        </nav>
+        <div class="acessBar">
+            <button class="btnAcess">Acessar</button>
+            <button class="btnAcess">Registrar</button>
+        </div>
+    </header>
+    <div class="accessForm">
+        <h3>Login</h3>
+        <form action="/login" method="post">
+            <label for="username">E-mail:</label>
+            <input type="text" name="email">
+            <label for="password">Senha:</label>
+            <input type="password" name="password">
+            <a href="">Esqueceu sua senha ?</a>
+            <button type="submit" id="acessar">Entrar</button>
+            <span>Não tem uma conta ? <b><a href="/register">Registre-se</a></b></span>
+            <span class="btnHidden"><i class="fa-solid fa-chevron-up"></i></span>
+        </form>
+    </div>
+
+    <main>
+        <section class="banner" id="banner">
+            <div class="mainImage">
+                <img src="https://casabrancaresidencial.com/wp-content/uploads/elementor/thumbs/physiotherapist-having-appointment-1920px-150-kb-q1b1gtloawz1qiez7x7415zxs6na9rr5tcbqwls7a4.jpg"
+                    alt="">
+            </div>
+            <div class="apresentation">
+                <h1>Bem vindo ao FisioMov</h1>
+
+            </div>
+        </section>
+        <section class='numbers'>
+            <div class="numbersList">
+                <div class="cardNumber">
+                    <i class="fa-solid fa-user-group"></i>
+                    <p>1500<b>+</b></p>
+                    <hr>
+                    <label>Clientes espalhados por todo Rio de Janeiro</label>
+                </div>
+                <div class="cardNumber">
+                    <i class="fa-solid fa-user-doctor"></i>
+                    <p>50<b>+</b></p>
+                    <hr>
+                    <label>Colaboradores altamente capacitados</label>
+                </div>
+                <div class="cardNumber">
+                    <i class="fa-solid fa-wheelchair-move"></i>
+                    <p>100<b>+</b></p>
+                    <hr>
+                    <label>Técnicas diferentes para o seu cuidado</label>
+                </div>
+            </div>
+            <div class="numberData">
+                <div class="numberContent">
+                    <h1>
+                        Faça parte desse movimento,
+                    </h1>
+                    <h2>o seu parceiro virtual.</h2>
+                    <p>Nossa plataforma
+                        revolucionária permite que você aprimore e otimize o seu tratamento de fisioterapia com a ajuda
+                        da
+                        mais
+                        avançada inteligência artificial.</p>
+                    <br>
+                    <p>Aqui, a cura está ao alcance de um clique. Com a nossa IA inovadora, você terá à disposição uma
+                        avaliação
+                        precisa da sua posição e movimentos, permitindo uma fisioterapia personalizada e eficiente. Não
+                        importa
+                        onde você esteja, fisioMov estará ao seu lado, oferecendo orientações e exercícios direcionados
+                        para
+                        acelerar sua recuperação.</p>
+                    <br>
+                    <p>Comece a sua jornada com fisioMov hoje e descubra como a tecnologia pode fazer a diferença em seu
+                        processo de recuperação. Sua saúde, em suas mãos, com o poder da IA ao seu lado.</p>
+                    <div class="formEmail">
+                        <form>
+                            <p>Entre em contato conosco!</p>
+                            <input type="text" placeholder="Digite seu nome">
+                            <input type="email" placeholder="Digite seu email">
+                            <textarea name="" placeholder="Sua mensagem..."></textarea>
+                            <button type="submit">Enviar</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="numberImages">
+                    <div class="numberImagesContainer">
+                        <img class="img1"
+                            src="https://auravip.com.br/blog/wp-content/uploads/2022/04/beneficios-da-fisioterapia.jpg"
+                            alt="Foto ilustrativa da fisioterapia">
+                        <img class="img2"
+                            src="https://img.freepik.com/fotos-gratis/feliz-casal-maduro-fazendo-exercicios-de-alongamento-com-ajuda-de-fisioterapeuta-em-casa_637285-7850.jpg"
+                            alt="Foto ilustrativa da fisioterapia">
+                        <img class="img3"
+                            src="https://telemedicinamorsch.com.br/wp-content/uploads/2022/06/fisioterapia-do-trabalho-telemedicina-morsch.jpg"
+                            alt="Foto ilustrativa da fisioterapia">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="deck" id="recursos">
+            <h1 class="title" id="titleRecursos">Recursos Terapeuticos</h1>
+            <div class="containerCard">
+                <div class="card">
+                    <div class="cardImage">
+                        <img src="https://img.freepik.com/fotos-premium/esteticista-fazendo-terapia-de-luz-led-para-mulher-no-salao-spa-fototerapia-facial-para-limpeza-dos-poros-da-pele-tratamentos-anti-envelhecimento-e-procedimento-de-foto-rejuvenescimento-senhora-fazendo-terapia-facial-em-resort-spa_289152-1954.jpg"
+                            alt="">
+                    </div>
+                    <h3>Fototerapia</h3>
+                    <p>Recorre-se à luz para realizar o tratamento, como por exemplo, os infravermelhos e o laser.</p>
+                </div>
+                <div class="card">
+                    <div class="cardImage">
+                        <img src="https://s2-g1.glbimg.com/3klSicNfIkJKPtHXr3jeU4TB2Bw=/0x0:960x678/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2020/7/p/b4LZ09QdWvZr1aon6NjQ/imagem.jpg"
+                            alt="">
+                    </div>
+                    <h3>Terapia manual</h3>
+                    <p>Aplicação de técnicas como manipulações articulares, mobilização, alongamentos e terapia
+                        miofascial,
+                        entre outras.</p>
+                </div>
+                <div class="card">
+                    <div class="cardImage">
+                        <img src="https://blogfisioterapia.com.br/wp-content/uploads/2017/08/hidroterapia-2.jpg"
+                            alt="Foto do profissional">
+                    </div>
+                    <h3>Hidroterapia</h3>
+                    <p>Realizada dentro d'água, seja em piscinas ou tanques, utilizando equipamentos aquáticos, como
+                        turbilhões, hidromassagens, etc.</p>
+                </div>
+                <div class="card">
+                    <div class="cardImage">
+                        <img src="https://vitat.com.br/wp-content/uploads/2022/02/shutterstock_1345945193-1-scaled.jpg?ims=fit-in/900x350/filters:quality(70):format(webpp)"
+                            alt="Foto do profissional">
+                    </div>
+                    <h3>Cinesioterapia</h3>
+                    <p>Alongamentos, mobilizações e fortalecimento muscular. Tem como base o próprio movimento corporal.
+                    </p>
+                </div>
+                <div class="card">
+                    <div class="cardImage">
+                        <img src="https://www.fisioterapia-lisboa.com/uploads/canais_relacionados_galeria/electroterapia_2.jpg?03:14:08"
+                            alt="Foto do profissional">
+                    </div>
+                    <h3>Electroterapia</h3>
+                    <p>Utiliza um aparelho de eletroterapia com corrente elétrica. Proporciona a redução da dor,
+                        regeneração dos tecidos e outro benefícios</p>
+                </div>
+                <div class="card">
+                    <div class="cardImage">
+                        <img
+                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRaeQTEhXtAuZzkpFJWAzwR1qA777UDvgHTsw&usqp=CAU">
+                    </div>
+                    <h3>Massoterapia</h3>
+                    <p>Técnicas de massagem, incluindo as de relaxamento, terapêuticas e drenagem linfática manual.</p>
+                </div>
+                <div class="card">
+                    <div class="cardImage">
+                        <img src="https://img.medicalexpo.com/pt/images_me/photo-mg/74688-15131735.jpg">
+                    </div>
+                    <h3>Crioterapia</h3>
+                    <p>Uso do frio para tratamento local ou geral do corpo. Pode-se aplicar o gelo, bolsas de gel ou
+                        compressas frias.</p>
+                </div>
+                <div class="card">
+                    <div class="cardImage">
+                        <img
+                            src="https://www.abc.med.br/fmfiles/index.asp/::places::/abcmed/Ultrassom-terapeutico-O-que-e-Quais-sao-as-aplicacoes-E-as-contraindicacoes-.jpg">
+                    </div>
+                    <h3>Mecanoterapia</h3>
+                    <p>Esta terapia utiliza agentes mecânicos, como por exemplo o ultra-som. </p>
+                </div>
+                <div class="card">
+                    <div class="cardImage">
+                        <img
+                            src="https://static.tuasaude.com/media/article/mb/ln/fisioterapia-respiratoria_32350_l.jpg">
+                    </div>
+                    <h3>Cinesioterapia Respiratória</h3>
+                    <p>Quando o tratamento é voltado para a recuperação e reabilitação de condições que afetam o sistema
+                        respiratório.</p>
+                </div>
+                <div class="card">
+                    <div class="cardImage">
+                        <img
+                            src="https://blog.carcioficial.com.br/wp-content/uploads/2018/08/198727-afinal-quais-sao-os-beneficios-e-indicacoes-da-termoterapia.jpg">
+                    </div>
+                    <h3>Termoterapia</h3>
+                    <p>Realizado por meio do uso de calor, que pode incluir calor úmido, bolsas de água quente,
+                        parafina, parafango e ondas curtas, entre outras opções.</p>
+                </div>
+
+
+
+
+            </div>
+
+
+
+
+
+
+
+
+
+        </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <section class="members" id="members">
+            <h1 class="title">Corpo Técnico</h1>
+            <p class="legend">Desenvolvido por especialistas em fisioterapia e tecnologia, nosso compromisso é
+                proporcionar a você uma
+                experiência única de recuperação.
+            </p>
+            <ul class="membersList">
+                <li class="memberCard">
+                    <div class="memberImage">
+                        <img src="../img/adrieli.jpeg" alt="Foto do profissional">
+                    </div>
+                    <div class="memberData">
+                        <h3>Adrieli Salvador</h3>
+                        <p>Estudante de Fisioterapia</p>
+                        <p>Universidade Uni LaSalle</p>
+                        <label>Ver bio...</label>
+                    </div>
+                </li>
+                <li class="memberCard">
+                    <div class="memberImage">
+                        <img src="../img/marcela.jpeg" alt="Foto do profissional">
+                    </div>
+                    <div class="memberData">
+                        <h3>Marcela Avellar</h3>
+                        <p>Estudante de Arquitetura</p>
+                        <p>Universidade Uni LaSalle</p>
+                        <label>Ver bio...</label>
+                    </div>
+                <li class="memberCard">
+                    <div class="memberImage">
+                        <img src="../img/stephany.jpeg" alt="Foto do profissional">
+                    </div>
+                    <div class="memberData">
+                        <h3>Stephany Gabina</h3>
+                        <p>Estudante de Nutrição</p>
+                        <p>Universidade Uni LaSalle</p>
+                        <label>Ver bio...</label>
+                    </div>
+                </li>
+                <li class="memberCard">
+                    <div class="memberImage">
+                        <img src="../img/barbara.jpeg" alt="Foto do profissional">
+                    </div>
+                    <div class="memberData">
+                        <h3>Barbara Dias</h3>
+                        <p>Estudante de Fisioterapia</p>
+                        <p>Universidade Uni LaSalle</p>
+                        <label>Ver bio...</label>
+                    </div>
+                </li>
+                <li class="memberCard">
+                    <div class="memberImage">
+                        <img src="../img/yasmim.jpeg" alt="Foto do profissional">
+                    </div>
+                    <div class="memberData">
+                        <h3>Yasmim Braga</h3>
+                        <p>Estudante de Fisioterapia</p>
+                        <p>Universidade Uni LaSalle</p>
+                        <label>Ver bio...</label>
+                    </div>
+                </li>
+                <li class="memberCard">
+                    <div class="memberImage">
+                        <img src="../img/samuel.jpg" alt="Foto do profissional">
+                    </div>
+                    <div class="memberData">
+                        <h3>Samuel Lima</h3>
+                        <p>Estudante de Arquitetura</p>
+                        <p>Universidade Uni LaSalle</p>
+                        <label>Ver bio...</label>
+                    </div>
+                </li>
+                <li class="memberCard">
+                    <div class="memberImage">
+                        <img src="../img/ana.jpg" alt="Foto do profissional">
+                    </div>
+                    <div class="memberData">
+                        <h3>Ana Clara</h3>
+                        <p>Estudante de Arquitetura</p>
+                        <p>Universidade Uni LaSalle</p>
+                        <label>Ver bio...</label>
+                    </div>
+                </li>
+                <li class="memberCard">
+                    <div class="memberImage">
+                        <img src="../img/kessya.jpg" alt="Foto do profissional">
+                    </div>
+                    <div class="memberData">
+                        <h3>Kessya Rodrigues</h3>
+                        <p>Estudante de Arquitetura</p>
+                        <p>Universidade Uni LaSalle</p>
+                        <label>Ver bio...</label>
+                    </div>
+                </li>
+                <li class="memberCard">
+                    <div class="memberImage">
+                        <img src="../img/paulo.jpeg" alt="Foto do profissional">
+                    </div>
+                    <div class="memberData">
+                        <h3>Paulo Gabriel</h3>
+                        <p>Estudante de Arquitetura</p>
+                        <p>Universidade Uni LaSalle</p>
+                        <label>Ver bio...</label>
+                    </div>
+                </li>
+                <li class="memberCard">
+                    <div class="memberImage">
+                        <img src="../img/vitoria.jpg" alt="Foto do profissional">
+                    </div>
+                    <div class="memberData">
+                        <h3>Vitória Gallo</h3>
+                        <p>Estudante de RH</p>
+                        <p>Universidade Uni LaSalle</p>
+                        <label>Ver bio...</label>
+                    </div>
+                </li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footerBanner">
+            <img src="https://www.biologix.com.br/wp-content/uploads/2020/07/como-a-fisioterapia-atua-no-sono.jpg"
+                alt="">
+            <h2>Comece a sua jornada com fisioMov hoje!</h2>
+            <br>
+            <p>Descubra como a tecnologia pode fazer a diferença em seu processo de recuperação.</p>
+            <p> Sua saúde, em suas
+                mãos, com o poder da IA ao seu lado.</p>
+            <br><br>
+            <a href="/register">Clique aqui</a>
+            <br>
+            <p>e registre-se com a gente!</p>
+        </div>
+        <div class="footerData">
+            <p>Acesse nossas redes sociais</p>
+            <div class="footerIcons">
+
+                <a href=""><i class="fa-brands fa-whatsapp"></i></a>
+                <a href="https://www.instagram.com/arq_fisio/?igshid=YTQwZjQ0NmI0OA%3D%3D" target="_blank"><i
+                        class="fa-brands fa-instagram"></i></a>
+                <a href=""><i class="fa-brands fa-facebook"></i></a>
+            </div>
+            <nav>
+                <a href="#banner">Início</a>
+                <a href="#recursos">Recursos</a>
+                <a href="#members">Membros</a>
+                <a href="">Termos</a>
+                <a href="">Política de Privacidade</a>
+            </nav>
+            <br>
+
+            <label>Criada por alunos do 4º período de Arquitetura & Fisioterapia para a Atividade Integradora
+                IV.</label>
+        </div>
+    </footer>
+</body>
+
+</html>

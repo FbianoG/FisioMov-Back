@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang='pt-br'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <!-- <link rel='stylesheet' href='style.css'>
+    <script src='../js/act.js' defer></script> -->
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="/createAct" method="post" enctype = "multipart/form-data">
+        <input type="text" name="name" required placeholder="Nome da atividade">
+        <input type="text" name="web" required placeholder="link da IA">
+        <select name="category">
+            <option value="hg">Membro Superior</option>
+            <option value="lw">Membro Inferior</option>
+        </select>
+        <input type="file" name="file">
+        <button type="submit">Cadastrar</button>
+    </form>
+</body>
+
+</html>

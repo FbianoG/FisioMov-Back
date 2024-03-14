@@ -1,0 +1,897 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+    scroll-behavior: smooth;
+}
+
+html {
+    width: 100vw;
+    overflow-x: hidden;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+header {
+    background: #fdfdfd;
+    width: 100%;
+    height: 70px;
+    display: grid;
+    grid-template-columns: max-content max-content 1fr;
+    gap: 100px;
+    align-items: center;
+    justify-content: flex-start;
+    box-shadow: 0px 3px 5px #0003;
+    position: fixed;
+    z-index: 10;
+    padding: 0 50px;
+    top: 0;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+    font-family: 'Nunito', sans-serif;
+    color: #333;
+}
+
+nav {
+    display: flex;
+    gap: 40px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+nav a:hover {
+    transition: 250ms;
+    opacity: 0.5;
+}
+
+nav .active {
+    color: #c82c3f;
+    font-weight: bold;
+}
+
+.acessBar {
+    display: flex;
+    gap: 30px;
+    justify-self: flex-end;
+}
+
+.acessBar button {
+    padding: 5px 10px;
+    background: #2cb5a0;
+    color: #fdfdfd;
+    box-shadow: none;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.acessBar button:hover {
+    transition: 300ms;
+    background: #fdfdfd;
+    color: #2cb5a0;
+    box-shadow: 3px 3px 5px #0003;
+}
+
+.accessForm {
+    background: #fdfdfd;
+    width: 350px;
+    height: 320px;
+    position: fixed;
+    right: 10px;
+    top: -290px;
+    padding: 20px;
+    border-radius: 0 0 10px 10px;
+    z-index: 9;
+    overflow: hidden;
+    box-shadow: 3px 3px 5px #0003;
+    transition: 350ms;
+}
+
+.accessForm h3 {
+    text-align: center;
+    /* color: #57af5e; */
+    color: #666;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.accessForm form {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    justify-content: center;
+    position: relative;
+}
+
+.accessForm label {
+    color: #aaa;
+    font-size: 13px;
+}
+
+.accessForm input {
+    background: transparent;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    outline: none;
+    height: 30px;
+    font-size: 16px;
+    color: #333;
+    padding: 3px 5px;
+}
+
+.accessForm a {
+    text-align: right;
+    font-size: 13px;
+    text-decoration: none;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.accessForm a:hover {
+    color: #999;
+}
+
+.accessForm button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #2cb5a0;
+    color: #fdfdfd;
+    font-size: 16px;
+    font-weight: bold;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    line-height: 30px;
+    width: 100%;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.accessForm button:hover {
+    background: #fdfdfd;
+    color: #2cb5a0;
+    transition: 200ms;
+    box-shadow: none;
+    box-shadow: 3px 3px 5px #0003;
+}
+
+.accessForm span {
+    width: 100%;
+    font-size: 13px;
+    text-align: center;
+    color: #999;
+}
+
+.accessForm .btnHidden {
+    position: absolute;
+    bottom: -140px;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 30%;
+    transition: 300ms;
+}
+
+.accessForm .btnHidden:hover {
+    background: #0001;
+    bottom: -135px;
+}
+
+
+
+
+
+.banner {
+    margin-top: 70px;
+    background: linear-gradient(to right, #e9f6f1, #61b0a5);
+    width: 100%;
+    height: 600px;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mainImage {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.mainImage img {
+    position: absolute;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+
+
+
+.apresentation {
+    /* display: flex; */
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+    width: 100%;
+    color: #fffff3;
+    z-index: 2;
+    height: fit-content;
+}
+
+.apresentation h1 {
+    margin: 0 auto 60px;
+    font-size: 40px;
+    width: 50%;
+    text-shadow: 3px 3px 2px #0003;
+}
+
+.apresentation p {
+    width: 70%;
+    font-size: 25px;
+    text-shadow: 2px 2px 3px #0003;
+}
+
+.apresentation h2 {
+    /* width: 100%; */
+    font-family: 'Nunito', sans-serif;
+    ;
+    font-size: 35px;
+    margin-bottom: 50px;
+    padding: 5px 15px;
+    text-shadow: 3px 3px 2px #0003;
+}
+
+.menssageBar {
+    width: 100%;
+}
+
+.menssageBar p {
+    width: 100%;
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.menssageBar input {
+    height: 35px;
+    width: 50%;
+    border: 1px solid transparent;
+    outline: none;
+    border-radius: 20px;
+    background: #fffff3bb;
+    padding: 3px 10px;
+    font-size: 18px;
+    box-shadow: 3px 3px 5px #0003;
+    margin-bottom: 20px;
+}
+
+.menssageBar button {
+    height: 35px;
+    width: 100px;
+    background: #c82c3f;
+    border: 1px solid transparent;
+    border-radius: 20px;
+    box-shadow: 3px 3px 5px #0003;
+    font-size: 17px;
+    font-weight: bold;
+    color: #fffff3;
+    cursor: pointer;
+}
+
+.numbers {
+    padding: 0 0 100px;
+}
+
+.numbersList {
+    position: relative;
+    top: -30px;
+    display: flex;
+    justify-content: center;
+    z-index: 2;
+    gap: 60px;
+}
+
+.cardNumber {
+    width: 250px;
+    height: 280px;
+    padding: 25px;
+    background: #2cb5a0;
+    text-align: center;
+    color: #eee;
+    box-shadow: 3px 3px 5px #0003;
+}
+
+
+.cardNumber i {
+    font-size: 50px;
+    margin-bottom: 30px;
+}
+
+.cardNumber p {
+    font-size: 40px;
+    font-weight: 500;
+}
+
+.cardNumber b {
+    font-weight: normal;
+    color: #80d6c4;
+}
+
+.cardNumber hr {
+    opacity: 0.6;
+    margin: 10px 0;
+}
+
+.numberData {
+    margin: 100px auto 0;
+    width: 80%;
+    display: flex;
+    height: 835px;
+}
+
+.numberContent {
+    width: 50%;
+
+
+}
+
+.numberContent h1 {
+    font-size: 40px;
+    color: #555;
+}
+
+.numberContent h2 {
+    font-size: 30px;
+    color: #2cb5a0;
+    margin-bottom: 50px;
+}
+
+.numberContent p {
+    color: #333;
+}
+
+.formEmail form {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    color: #444;
+}
+
+.formEmail p {
+    color: #444;
+    font-size: 22px;
+    font-weight: 500;
+}
+
+.formEmail input {
+    height: 35px;
+    width: 70%;
+    max-width: 450px;
+    padding: 3px 5px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    outline: none;
+    box-shadow: 3px 3px 10px #0003;
+}
+
+.formEmail textarea {
+    height: 120px;
+    width: 70%;
+    max-width: 450px;
+    padding: 3px 5px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    outline: none;
+    resize: none;
+    box-shadow: 3px 3px 10px #0003;
+}
+
+.formEmail button {
+    width: 100px;
+    line-height: 35px;
+    border: none;
+    border-radius: 5px;
+    background: #2cb5a0;
+    color: #fdfdfd;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.formEmail button:hover {
+    transition: 250ms;
+    background: #fdfdfd;
+    color: #2cb5a0;
+    box-shadow: 3px 3px 5px #0003;
+}
+
+
+.numberImages {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.numberImagesContainer {
+    width: 90%;
+    height: 100%;
+    position: relative;
+}
+
+
+
+.numberImages img {
+    width: 65%;
+    max-width: 370px;
+    height: 300px;
+    object-fit: cover;
+    position: absolute;
+    box-shadow: 3px 3px 5px #0003;
+}
+
+.img1 {
+    left: 35%;
+    z-index: 2;
+}
+
+.img2 {
+    top: 260px;
+    z-index: 2;
+}
+
+.img3 {
+    top: 530px;
+    left: 35%;
+    z-index: 1;
+}
+
+
+
+.legend {
+    margin: 0 auto;
+    width: 50%;
+    max-width: 680px;
+    min-width: 375px;
+    padding: 0 20px;
+    font-size: 14px;
+    color: #999;
+    text-align: center;
+}
+
+
+
+
+
+.deck {
+    width: 100%;
+    padding: 70px 0px 150px;
+    background: #eee;
+}
+
+.title {
+    color: #2cb5a0;
+    text-align: center;
+    padding: 0 20px;
+    font-size: 40px;
+}
+
+#titleRecursos {
+    margin-bottom: 70px;
+}
+
+.containerCard {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 100px;
+    padding: 0 5%;
+
+}
+
+.card {
+    background: #fff;
+    width: 300px;
+    height: 350px;
+    padding: 15px;
+    box-shadow: 5px 5px 10px #0001;
+    overflow: hidden;
+}
+
+.cardImage {
+    width: 100%;
+    height: 65%;
+    overflow: hidden;
+}
+
+.cardImage img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card h3 {
+    padding: 5px 0;
+    color: #2cb5a0;
+}
+
+.card p {
+    color: #777;
+    font-size: 15px;
+}
+
+.members {
+    padding: 70px 0px 150px;
+}
+
+.membersList {
+    display: flex;
+    gap: 40px;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    margin: 70px 0 0;
+}
+
+.memberCard {
+    width: 420px;
+    height: 120px;
+    background: #fff;
+    box-shadow: 3px 3px 10px #0003;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    gap: 20px;
+}
+
+.memberImage {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #b7cec3;
+}
+
+.memberImage img {
+    width: 90%;
+    height: 90%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.memberData {
+    flex: 1;
+    height: 100%;
+    display: grid;
+
+
+}
+
+.memberData h3 {
+    color: #666;
+}
+
+.memberData p {
+    font-size: 15px;
+    color: #777;
+}
+
+.memberData label {
+    font-size: 13px;
+    color: #bbb;
+    cursor: pointer;
+    width: fit-content;
+}
+
+.memberData label:hover {
+    opacity: 0.5;
+}
+
+
+
+.footerBanner {
+    height: 400px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: #eee;
+    text-shadow: 1px 1px 10px #002;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.footerBanner img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    filter: brightness(50%) grayscale(50%);
+    object-fit: cover;
+    z-index: -1;
+}
+
+.footerBanner h2 {
+    font-size: 35px;
+    text-decoration: none;
+
+    font-weight: 500;
+}
+
+.footerBanner a {
+    font-size: 25px;
+    text-decoration: none;
+    color: #80d6c4;
+    font-weight: 500;
+}
+.footerBanner a:hover {
+    transition: 300ms;
+    opacity: 0.7;
+}
+
+.footerData {
+    background: #5a655d;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 0 20px;
+}
+.footerIcons {
+    display: flex;
+    gap: 25px;
+}
+.footerData p {
+   color: #111;
+}
+.footerIcons i {
+    font-size: 30px;
+    color: #111;
+    margin: 10px 0 20px;
+}
+.footerIcons i:hover {
+    transition: 300ms;
+    color: #2cb5a0;
+}
+
+.footerData nav {
+    color: #111;
+    flex-wrap: wrap;
+    gap: 10px 40px;
+    justify-content: center;
+}
+.footerData nav a{
+    color: #111;
+
+}
+.footerData label{
+    color: #333;
+    justify-self: flex-end;
+    font-size: 13px;
+    text-align: center;
+}
+
+
+
+
+
+/* mb < 680 - TB < 1024 - */
+@media screen and (max-width: 1023px) {
+    header {
+        display: flex;
+        padding: 0;
+        justify-content: space-around;
+        gap: 20px;
+    }
+
+    .numbersList {
+        gap: 15px;
+    }
+
+    .banner {
+        height: 400px;
+    }
+    .numberData {
+        width: 100%;
+        height: auto;
+    }
+
+    .numberContent {
+        width: 100%;
+        padding: 0 20px;
+    }
+
+    .numberImages {
+        display: none;
+    }
+
+    .memberCard {
+        width: 335px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+/* mb <= 767 - TB <= 1023 - */
+@media screen and (max-width: 767px) {
+
+    header nav {
+        display: none;
+    }
+
+
+
+    .acessBar :nth-child(1) {
+        background: #fdfdfd;
+        color: #2cb5a0;
+        box-shadow: 3px 3px 5px #0003;
+    }
+
+    .acessBar :nth-child(1):hover {
+        background: #2cb5a0;
+        color: #fdfdfd;
+        box-shadow: none;
+    }
+
+    .acessBar :nth-child(2) {
+        display: none;
+    }
+
+    .accessForm {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .banner {
+
+        height: 300px;
+    }
+
+    .mainImage img {
+        opacity: 0.5;
+        filter: brightness(0.5);
+    }
+
+    .apresentation h1 {
+        width: 100%;
+        margin: 0;
+        padding: 0 20px;
+    }
+
+    .numbersList {
+        width: 65%;
+        gap: 60px;
+        /* border: 1px solid red; */
+        margin: 0 auto;
+        justify-content: flex-start;
+        left: 0;
+    }
+
+    .cardNumber {
+        padding: 25px 10px;
+        min-width: 100%;
+        position: relative;
+        animation: caroussel 15s infinite;
+        right: calc(0% - 0px)
+    }
+
+    @keyframes caroussel {
+        0% {
+            right: calc(0% - 0px);
+        }
+
+        20% {
+            right: calc(0% - 0px);
+        }
+
+        33% {
+            right: calc(100% + 60px);
+        }
+
+        53% {
+            right: calc(100% + 60px);
+        }
+
+        66% {
+            right: calc(200% + 120px);
+        }
+
+        86% {
+            right: calc(200% + 120px);
+        }
+
+        100% {
+            right: calc(0% - 0px);
+        }
+    }
+
+    .numberImages {
+        display: none;
+    }
+
+    .numberContent {
+        width: 100%;
+        padding: 0 20px;
+    }
+
+    .numberContent h1,
+    .numberContent h2 {
+        text-align: center;
+    }
+
+    .formEmail p {
+        text-align: center;
+    }
+
+    .formEmail input {
+        width: 100%;
+
+        font-size: 16px;
+    }
+
+    .formEmail textarea {
+        width: 100%;
+
+        height: 150px;
+        font-size: 16px;
+    }
+
+    .formEmail button {
+        margin: 20px auto;
+    }
+
+    .containerCard {
+        gap: 0;
+        padding: 0;
+    }
+
+    .card {
+        width: 100%;
+        border-radius: 0px;
+    }
+
+    .cardImage {
+        border-radius: 0px;
+    }
+
+    .memberCard {
+        width: 90%;
+        height: auto;
+    }
+}
