@@ -111,7 +111,7 @@ async function updateActivity(req, res) { // Atualiza e envia ao usuário as ati
 		if (!lw) {
 			lw = rptl = serl = []
 		}
-		let patient = await PacientModel.findOneAndUpdate({ _id }, { menssage, hg, rpth, serh, lw, rptl, serl, by: userAuth.name }, { new: true })
+		let patient = await PacientModel.findOneAndUpdate({ _id }, { message, hg, rpth, serh, lw, rptl, serl, by: userAuth.name }, { new: true })
 		if (!patient) {
 			return res.status(404).json({ message: "Nenhum paciente encontrado!" })
 		}

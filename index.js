@@ -13,7 +13,7 @@ const corsOptions = {
 // 	origin: 'http://127.0.0.1:5500'
 // }
 
-app.use(cors(corsOptions))
+app.use(cors())
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 app.use(express.static("./src/public"))
