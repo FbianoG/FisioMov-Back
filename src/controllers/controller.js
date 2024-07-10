@@ -26,15 +26,29 @@ async function createUser(req, res) { // Cria um novo usuário
 
 async function createAct(req, res) { // Cria uma nova atividade
 	let { name, web, category } = req.body
-	console.log(req.file)
-	const src = req.file
-	if (!name || !web || !category || !src) {
+	console.log(req.body)
+
+	if (!name || !web || !category) {
 		return res.status(401).json({ message: "Preencha todos os campos!" })
 	}
 	try {
 		name = name.toLowerCase()
-		let newAct = await ActivityModel.create({ name, web, category, src: src.filename })
+		let newAct = await ActivityModel.create({ name, web, category })
 		res.status(201).json({ message: "Atividade criada com sucesso!", newAct })
+	} catch (error) {
+		console.log(error)
+		res.status(500).json({ message: "Algum erro foi encontrado!" })
+	}
+
+}
+
+async function deleteAct(req, res) { // Exclui atividade
+	let { _id } = req.body
+
+	if (!_id) return res.status(401).json({ message: "Preencha todos os campos!" })
+	try {
+		let delAct = await ActivityModel.findByIdAndDelete(_id)
+		res.status(201).json({ message: "Atividade excluída com sucesso!" })
 	} catch (error) {
 		console.log(error)
 		res.status(500).json({ message: "Algum erro foi encontrado!" })
@@ -143,4 +157,4 @@ async function deleteActivity(req, res) { //  Envia ao usuário as atividades
 }
 
 
-module.exports = { loginUser, createUser, createAct, sendActivity, updateActivity, deleteActivity, getUser, getAllUsers, getAllActivity, }
+module.exports = { loginUser, createUser, createAct, deleteAct, sendActivity, updateActivity, deleteActivity, getUser, getAllUsers, getAllActivity, }

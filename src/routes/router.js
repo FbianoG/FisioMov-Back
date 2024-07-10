@@ -13,7 +13,9 @@ router.post("/login", control.loginUser)
 
 router.post("/createUser", upload.single("file"), control.createUser) // Criação de um novo "Usuário"
 
-router.post("/createAct", upload.single("file"), control.createAct) //Criação de uma nova "Atividade"
+router.post("/createAct", mid.verifyToken, control.createAct) //Criação de uma nova "Atividade"
+
+router.post("/deleteAct", mid.verifyToken, control.deleteAct) //Exclusão de uma "Atividade"
 
 
 
