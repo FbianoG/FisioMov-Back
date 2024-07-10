@@ -25,12 +25,9 @@ async function createUser(req, res) { // Cria um novo usuário
 }
 
 async function createAct(req, res) { // Cria uma nova atividade
-	let { name, web, category } = req.body
-	console.log(req.body)
+	let { name, web, category } = req.body.data
 
-	if (!name || !web || !category) {
-		return res.status(401).json({ message: "Preencha todos os campos!" })
-	}
+	if (!name || !web || !category) return res.status(401).json({ message: "Preencha todos os campos!" })
 	try {
 		name = name.toLowerCase()
 		let newAct = await ActivityModel.create({ name, web, category })
@@ -39,7 +36,6 @@ async function createAct(req, res) { // Cria uma nova atividade
 		console.log(error)
 		res.status(500).json({ message: "Algum erro foi encontrado!" })
 	}
-
 }
 
 async function deleteAct(req, res) { // Exclui atividade

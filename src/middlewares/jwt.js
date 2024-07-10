@@ -3,7 +3,10 @@ const secretKey = 'Projeto03020'
 
 
 async function verifyToken(req, res, next) { // validação do token
-    const { token } = req.body // caso o token seja enviado via query (...?id=adf78y87ft2)
+
+    let { token } = req.body
+    if (!token) token = req.headers.authorization.split(' ')[1]
+
     if (!token) {
         return res.status(401).json({ auth: false, message: 'É necessário fazer login para acessar esta página.' })
     }
@@ -13,7 +16,7 @@ async function verifyToken(req, res, next) { // validação do token
         next()
     } catch (error) {
         console.log(error)
-        return res.status(500).json({ auth: false, message: 'Sessão expirada. Faça login novamente.' })
+        return res.status(401).json({ auth: false, message: 'Sessão expirada. Faça login novamente.' })
     }
 }
 
