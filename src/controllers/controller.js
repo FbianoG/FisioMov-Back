@@ -26,10 +26,10 @@ async function createUser(req, res) { // Cria um novo usuário
 
 async function createAct(req, res) { // Cria uma nova atividade
 	let { name, web, category } = req.body.data
-
-	if (!name || !web || !category) return res.status(401).json({ message: "Preencha todos os campos!" })
+	if (!name || !web || !category) return res.status(400).json({ message: "Preencha todos os campos!" })
 	try {
 		name = name.toLowerCase()
+		if (await ActivityModel.exists({ name })) return res.status(400).json({ message: 'Já possui atividade com este nome.' })
 		let newAct = await ActivityModel.create({ name, web, category })
 		res.status(201).json({ message: "Atividade criada com sucesso!", newAct })
 	} catch (error) {
@@ -53,7 +53,8 @@ async function deleteAct(req, res) { // Exclui atividade
 }
 
 async function loginUser(req, res) { // Validação de login
-	let { email, password } = req.body
+	let { email, password } = req.body.data
+	console.log(req.body.data)
 	try {
 		if (!email || !password) {
 			return res.status(400).json({ auth: false, message: "Preencha todos os campos." })
@@ -125,7 +126,8 @@ async function updateActivity(req, res) { // Atualiza e envia ao usuário as ati
 }
 
 async function sendActivity(req, res) { //  Envia ao usuário as atividades
-	let { patientId, activity } = req.body
+	let activity = req.body.data
+	let { patientId } = req.body
 	try {
 		const patient = await PacientModel.findById(patientId).select('proced')
 		if (patient.proced.some(element => element.id === activity.id)) {
