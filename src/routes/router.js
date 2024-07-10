@@ -23,6 +23,11 @@ router.post("/createAct", upload.single("file"), control.createAct) //Criação 
 router.post("/updateActivity", mid.verifyToken, control.updateActivity)
 
 
+router.post("/sendActivity", mid.verifyToken, control.sendActivity)
+
+router.post("/deleteActivity", mid.verifyToken, control.deleteActivity)
+
+
 
 
 // Busca dados

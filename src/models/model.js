@@ -1,22 +1,16 @@
 const mongoose = require("mongoose")
+const { array } = require("../controllers/multer")
 
 
 const Pacient = new mongoose.Schema({
 	name: String,
 	email: { type: String, required: true, unique: true },
-	password: { type: String, required: false, },
-	nasc: { type: Date, },
-	tel: String,
-	isPacient: Boolean,
-	message: String,
+	password: { type: String, required: true, },
+	nasc: { type: Date, required: true },
 	src: String,
-	hg: Array,
-	rpth: Array,
-	serh: Array,
-	lw: Array,
-	rptl: Array,
-	serl: Array,
-	by: String
+	isPacient: Boolean,
+	proced: Array,
+	message: String,
 })
 
 const Activity = new mongoose.Schema({

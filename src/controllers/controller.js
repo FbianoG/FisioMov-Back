@@ -95,35 +95,52 @@ async function getAllActivity(req, res) { // Busca todas as "Atividades" no "Dat
 }
 
 async function updateActivity(req, res) { // Atualiza e envia ao usuário as atividades
-	let { _id, menssage, hg, rpth, serh, lw, rptl, serl, } = req.body
+	let { patientId, activity } = req.body
+
+	// console.log(activity)
 	try {
-		if (!_id) {
-			return res.status(400).json({ message: "Falta informações na requisição!" })
-		}
-		const id = req.userId
-		const userAuth = await PacientModel.findOne({ _id: id }, "-password")
-		if (userAuth.isPacient) {
-			return res.status(401).json({ auth: false, message: "Acesso não autorizado." })
-		}
-		if (!hg) {
-			hg = rpth = serh = []
-		}
-		if (!lw) {
-			lw = rptl = serl = []
-		}
-		let patient = await PacientModel.findOneAndUpdate({ _id }, { message, hg, rpth, serh, lw, rptl, serl, by: userAuth.name }, { new: true })
-		if (!patient) {
-			return res.status(404).json({ message: "Nenhum paciente encontrado!" })
-		}
-		return res.status(200).json({ auth: true, status: 201, patient: patient.name, message: "Atividade incluída com sucesso." })
+
+		const patient = await PacientModel.findById(patientId).select('proced')
+		const newProceds = patient.proced.map(element => {
+			if (element.id === activity.id) return activity
+			return element
+		})
+		await PacientModel.findByIdAndUpdate(patientId, { proced: newProceds })
+		return res.status(201).json({ message: 'Atividade enviada com sucesso!' })
+
 	} catch (error) {
 		console.log(error)
-		return res.status(500).json({ status: 500, message: "Algum erro foi encontrado!", error })
+		return res.status(500).json({ message: 'Erro interno de servidor!' })
 	}
 }
 
-// SendFiles
+async function sendActivity(req, res) { //  Envia ao usuário as atividades
+	let { patientId, activity } = req.body
+	try {
+		const patient = await PacientModel.findById(patientId).select('proced')
+		if (patient.proced.some(element => element.id === activity.id)) {
+			await PacientModel.updateOne({ _id: patientId, 'proced.id': activity.id }, { $set: { 'proced.$': activity } });
+			return res.status(201).json({ message: 'Atividade enviada com sucesso!' });
+		}
+		await PacientModel.findByIdAndUpdate(patientId, { $push: { 'proced': activity } })
+		return res.status(201).json({ message: 'Atividade enviada com sucesso!' })
+	} catch (error) {
+		console.log(error)
+		return res.status(500).json({ message: 'Erro interno de servidor!' })
+	}
+}
+
+async function deleteActivity(req, res) { //  Envia ao usuário as atividades
+	let { patientId, actId } = req.body
+	try {
+		const deleteAct = await PacientModel.findByIdAndUpdate({ _id: patientId }, { $pull: { 'proced': { id: actId } } })
+		if (!deleteAct) return res.status(400).json({ message: 'Atividade não localizada.' })
+		return res.status(201).json({ message: 'Atividade excluída com sucesso!' })
+	} catch (error) {
+		console.log(error)
+		return res.status(500).json({ message: 'Erro interno de servidor!' })
+	}
+}
 
 
-
-module.exports = { loginUser, createUser, createAct, updateActivity, getUser, getAllUsers, getAllActivity, }
+module.exports = { loginUser, createUser, createAct, sendActivity, updateActivity, deleteActivity, getUser, getAllUsers, getAllActivity, }
