@@ -87,7 +87,7 @@ async function getAllActivity(req, res) { // Busca todas as "Atividades" no "Dat
 			console.log({ status: 204, menssage: "Não possui atividades cadastradas no DataBase!" })
 			return res.status(204).end()
 		}
-		res.status(200).json({ status: 200, allAct })
+		res.status(200).json(allAct)
 	} catch (error) {
 		console.log(error)
 		res.status(500).json({ status: 500, menssage: "Ocorreu algum erro!", error })
