@@ -3,12 +3,12 @@ const { array } = require("../controllers/multer")
 
 
 const Pacient = new mongoose.Schema({
-	name: String,
+	name: { type: String, required: true },
 	email: { type: String, required: true, unique: true },
 	password: { type: String, required: true, },
 	nasc: { type: Date, required: true },
 	src: String,
-	isPacient: Boolean,
+	isPatient: Boolean,
 	proced: Array,
 	message: String,
 })
