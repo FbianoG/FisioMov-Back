@@ -1,11 +1,13 @@
 const jwt = require('jsonwebtoken')
-const secretKey = 'Projeto03020'
+require('dotenv').config()
+
+const secretKey = process.env.SECRET_KEY
 
 
 async function verifyToken(req, res, next) { // validação do token
 
-    let { token } = req.body
-    if (!token) token = req.headers.authorization.split(' ')[1]
+    // let { token } = req.body
+    let token = req.headers.authorization.split(' ')[1]
 
     if (!token) {
         return res.status(401).json({ auth: false, message: 'É necessário fazer login para acessar esta página.' })
@@ -22,7 +24,7 @@ async function verifyToken(req, res, next) { // validação do token
 
 
 async function createToken(e) { // cria o token
-    const token = await jwt.sign({ id: e }, secretKey, { expiresIn: "99h" }) //{id: "valor a ser criptografado"}, chave secreta, { expiresIn: 1h, 10m 30s}
+    const token = await jwt.sign({ id: e }, secretKey, { expiresIn: "3h" }) //{id: "valor a ser criptografado"}, chave secreta, { expiresIn: 1h, 10m 30s}
     return token
 }
 

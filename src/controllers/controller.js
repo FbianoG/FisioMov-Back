@@ -1,5 +1,6 @@
 const { PacientModel, ActivityModel } = require("../models/model")
 const mid = require('../middlewares/jwt')
+const { hashPassword, comparePassword } = require("../middlewares/bcrypt")
 
 
 
@@ -10,8 +11,9 @@ async function createUser(req, res) { // Cria um novo usuário
 		if (![name, email, password, nasc].every(element => element && element.trim() !== '')) return res.status(400).json({ message: 'Preencha todos os dados.' })
 		name = name.toLowerCase()
 		email = email.toLowerCase()
+		const hashedPassword = await hashPassword(password)
 		if (await PacientModel.exists({ email })) return res.status(400).json({ message: 'Este email já está em uso!' })
-		const newUser = await PacientModel.create({ name, email, password, nasc, isPatient: true, proced: [] })
+		const newUser = await PacientModel.create({ name, email, password: hashedPassword, nasc, isPatient: true, proced: [] })
 		return res.status(201).json({ message: 'Usuário criado com sucesso!' })
 	} catch (error) {
 		console.log(error)
@@ -49,16 +51,22 @@ async function deleteAct(req, res) { // Exclui atividade
 
 async function loginUser(req, res) { // Validação de login
 	let { email, password } = req.body.data
-	console.log(req.body.data)
 	try {
 		if (!email || !password) {
 			return res.status(400).json({ auth: false, message: "Preencha todos os campos." })
 		}
 		email.toLowerCase()
-		let user = await PacientModel.findOne({ email })
-		if (!user || password != user.password) {
+		const user = await PacientModel.findOne({ email })
+
+		if (!user) {
 			return res.status(400).json({ auth: false, message: "Usuário ou senha inválidos." })
 		}
+
+		const hPassword = await comparePassword(password, user.password)
+		if (!hPassword) {
+			return res.status(400).json({ auth: false, message: "Usuário ou senha inválidos." })
+		}
+
 		const token = await mid.createToken(user._id)
 		return res.status(200).json({ auth: true, patient: user.isPatient, message: "Logado com sucesso.", token })
 	} catch (error) {
