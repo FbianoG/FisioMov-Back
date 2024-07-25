@@ -1,8 +1,10 @@
 const router = require("express").Router()
 const control = require("../controllers/controller")
-const upload = require('../controllers/multer')
 const mid = require("../middlewares/jwt")
 
+const multer = require('multer')
+const storage = multer.memoryStorage()
+const upload = multer({ storage: storage })
 
 // Validação de login
 
@@ -11,7 +13,7 @@ router.post("/login", control.loginUser)
 
 
 
-router.post("/createUser", control.createUser) // Criação de um novo "Usuário"
+router.post("/createUser", upload.single('src'), control.createUser) // Criação de um novo "Usuário"
 
 router.post("/createAct", mid.verifyToken, control.createAct) //Criação de uma nova "Atividade"
 

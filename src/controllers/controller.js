@@ -1,19 +1,22 @@
 const { PacientModel, ActivityModel } = require("../models/model")
 const mid = require('../middlewares/jwt')
 const { hashPassword, comparePassword } = require("../middlewares/bcrypt")
+const { uploadImage } = require("../utils/fb")
 
 
 
 
 async function createUser(req, res) { // Cria um novo usuário
-	let { name, email, password, nasc } = req.body.data
+	let { name, email, password, nasc, src } = req.body
+	const file = req.file
 	try {
 		if (![name, email, password, nasc].every(element => element && element.trim() !== '')) return res.status(400).json({ message: 'Preencha todos os dados.' })
 		name = name.toLowerCase()
 		email = email.toLowerCase()
+		if (src) src = await uploadImage(file, email)
 		const hashedPassword = await hashPassword(password)
 		if (await PacientModel.exists({ email })) return res.status(400).json({ message: 'Este email já está em uso!' })
-		const newUser = await PacientModel.create({ name, email, password: hashedPassword, nasc, isPatient: true, proced: [] })
+		const newUser = await PacientModel.create({ name, email, password: hashedPassword, nasc, src, isPatient: true, proced: [] })
 		return res.status(201).json({ message: 'Usuário criado com sucesso!' })
 	} catch (error) {
 		console.log(error)
