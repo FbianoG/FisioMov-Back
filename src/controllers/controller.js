@@ -7,13 +7,14 @@ const { uploadImage } = require("../utils/fb")
 
 
 async function createUser(req, res) { // Cria um novo usuário
-	let { name, email, password, nasc, src } = req.body
+	let { name, email, password, nasc } = req.body
+	let src
 	const file = req.file
 	try {
 		if (![name, email, password, nasc].every(element => element && element.trim() !== '')) return res.status(400).json({ message: 'Preencha todos os dados.' })
 		name = name.toLowerCase()
 		email = email.toLowerCase()
-		if (src) src = await uploadImage(file, email)
+		if (file) src = await uploadImage(file)
 		const hashedPassword = await hashPassword(password)
 		if (await PacientModel.exists({ email })) return res.status(400).json({ message: 'Este email já está em uso!' })
 		const newUser = await PacientModel.create({ name, email, password: hashedPassword, nasc, src, isPatient: true, proced: [] })

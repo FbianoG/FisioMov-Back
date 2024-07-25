@@ -1,6 +1,4 @@
 const mongoose = require("mongoose")
-const { array } = require("../controllers/multer")
-
 
 const Pacient = new mongoose.Schema({
 	name: { type: String, required: true },
@@ -20,17 +18,7 @@ const Activity = new mongoose.Schema({
 	src: String,
 })
 
-
-
-
 const PacientModel = mongoose.model("User", Pacient)
-
 const ActivityModel = mongoose.model("Activity", Activity)
 
-
-
-
-module.exports = {
-	PacientModel,
-	ActivityModel,
-}
+module.exports = { PacientModel, ActivityModel, }

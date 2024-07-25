@@ -1,10 +1,8 @@
 const router = require("express").Router()
 const control = require("../controllers/controller")
 const mid = require("../middlewares/jwt")
+const { upload } = require("../middlewares/multer")
 
-const multer = require('multer')
-const storage = multer.memoryStorage()
-const upload = multer({ storage: storage })
 
 // Validação de login
 

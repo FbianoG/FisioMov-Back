@@ -3,7 +3,7 @@ const { getAuth, signInWithEmailAndPassword } = require("firebase/auth")
 const { ref, uploadBytes, getDownloadURL } = require("firebase/storage")
 require("dotenv").config()
 
-async function uploadImage(photo, userEmail) {
+async function uploadImage(photo) {
 
     if (photo.mimetype !== 'image/jpeg' && photo.mimetype !== 'image/png' && photo.mimetype !== 'image/jpg') throw new Error('Somente arquivos "Png" e "Jpg" são permitidos.')
     if (photo.size > 4 * 1024 * 1024) throw new Error('Máximo de 4mb por arquivo.')
